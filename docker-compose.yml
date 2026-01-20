@@ -2,6 +2,7 @@ services:
   mongodb:
     image: mongo:latest
     container_name: mi-mongo-dev
+    restart: always
     ports:
       - "27017:27017"
     volumes:
@@ -9,5 +10,6 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password123
-  volumes:
-    mongo-data:
+
+volumes:
+  mongo-data:
