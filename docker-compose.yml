@@ -7,6 +7,8 @@ services:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
+      # Datos de ejemplo para import-sample-data.sh (ruta relativa al docker-compose)
+      - ./data/mongodb-sample-dataset:/import-data:ro
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password123
